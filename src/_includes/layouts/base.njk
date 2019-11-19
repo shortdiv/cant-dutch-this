@@ -8,6 +8,12 @@
     <link rel="stylesheet" href="{{ '/css/index.css' | url }}">
     <link rel="stylesheet" href="{{ '/css/prism-base16-monokai.dark.css' | url }}">
     <link rel="alternate" href="{{ metadata.feed.path | url }}" type="application/atom+xml" title="{{ metadata.title }}">
+
+    {% for entry in prefetchLinks %}
+      {% if entry.pagePath.replace("-", "") == page.url %}
+        <link rel="prefetch" href="{{ entry | prefetchNextURL }}">
+      {% endif %}
+    {%- endfor -%}
   </head>
   <body>
     <header>
@@ -36,4 +42,13 @@
 
     <!-- Current page: {{ page.url | url }} -->
   </body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151321608-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-151321608-3');
+  </script>
 </html>
