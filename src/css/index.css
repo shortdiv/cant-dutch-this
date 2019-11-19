@@ -44,7 +44,7 @@ main :first-child {
   margin-top: 0;
 }
 header {
-  border-bottom: 1px dashed var(--lightgray);
+  padding: 40px 40px 0;
 }
 header:after {
   content: "";
@@ -223,4 +223,49 @@ a[href].direct-link:focus:visited,
 :hover > a[href].direct-link,
 :hover > a[href].direct-link:visited {
   color: #aaa;
+}
+
+.logo-img {
+  display: block;
+  text-align: center;
+}
+
+.logo-img {
+  height: auto;
+  width: 100px;
+  position: relative;
+  margin: 0 auto;
+}
+
+.title {
+  text-align: center;
+  display: block;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 8px 0;
+}
+
+.tmpl-menu li {
+  list-style: none;
+  border-bottom: 1px solid #cac3c5;
+  padding: 1.5rem 0;
+  position: relative;
+  height: 5em;
+  font-weight: bold;
+}
+
+.description {
+  display: block;
+  position: absolute;
+  bottom: 12px;
+  font-style: italic;
+  font-weight: 100;
 }
