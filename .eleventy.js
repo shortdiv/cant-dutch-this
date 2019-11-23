@@ -5,8 +5,13 @@ const pluginSyntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginNavigation = require("@11ty/eleventy-navigation");
 const markdownIt = require("markdown-it");
 const markdownItAnchor = require("markdown-it-anchor");
+require("dotenv").config();
+const THRESHOLD = 0.5
 
 module.exports = function(eleventyConfig) {
+
+  let env = process.env.ELEVENTY_ENV;
+
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(pluginSyntaxHighlight);
   eleventyConfig.addPlugin(pluginNavigation);
@@ -18,6 +23,13 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addFilter("readableDate", dateObj => {
     return DateTime.fromJSDate(dateObj, {zone: 'utc'}).toFormat("dd LLL yyyy");
   });
+
+  eleventyConfig.addFilter('prefetchNextURL', (entry, url) => {
+    // check threshold //
+    if (entry.nextPageCertainty > 0.4) {
+      return entry.nextPagePath.replace("-", "")
+    }
+  })
 
   // https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#valid-date-string
   eleventyConfig.addFilter('htmlDateString', (dateObj) => {

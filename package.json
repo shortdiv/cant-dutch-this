@@ -13,9 +13,9 @@
     "url": "git://github.com/11ty/eleventy-base-blog.git"
   },
   "author": {
-    "name": "Zach Leatherman",
-    "email": "zachleatherman@gmail.com",
-    "url": "https://zachleat.com/"
+    "name": "Divya Sasidharan",
+    "email": "hello@shortdiv.com",
+    "url": "shortdiv.com"
   },
   "license": "MIT",
   "bugs": {
@@ -30,5 +30,9 @@
     "luxon": "^1.12.0",
     "markdown-it": "^8.4.2",
     "markdown-it-anchor": "^5.0.2"
+  },
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "googleapis": "^45.0.0"
   }
 }

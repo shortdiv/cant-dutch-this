@@ -1,6 +1,7 @@
 _site/
 node_modules/
 package-lock.json
+.env
 
 .DS_Store
 # Local Netlify folder
