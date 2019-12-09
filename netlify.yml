@@ -1,0 +1,6 @@
+build:
+  publish: _site
+  functions: functions
+
+plugins:
+  - type: ./plugins/netlify-plugin-predictive-prefetch
